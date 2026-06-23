@@ -3,6 +3,14 @@ name = "hey_os"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+name = "hey_os"
+test = false
+bench = false
+
+[build]
+target = "x86_64-unknown-hey_os.json"
+
 [profile.dev]
 panic = "abort"
 
@@ -10,3 +18,4 @@ panic = "abort"
 panic = "abort"
 
 [dependencies]
+bootloader = "0.9" # latest includs core by default... 
