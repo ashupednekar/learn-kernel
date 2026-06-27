@@ -20,13 +20,13 @@ pub enum Color {
     White = 15,
 }
 
-#[derive(Debug, Clone)]
+#[derive(Debug, Copy, Clone)]
 #[repr(transparent)]
 pub struct ColorCode(u8);
 
 impl ColorCode {
     pub fn new(f: Color, b: Color) -> Self {
-        Self((f as u8) << 4 | (b as u8))
+        Self((b as u8) << 4 | (f as u8))
     }
 }
 
@@ -43,4 +43,10 @@ impl Character {
     }
 }
 
+pub const BUFFER_HEIGHT: usize = 25;
+pub const BUFFER_WIDTH: usize = 80;
 
+#[repr(transparent)]
+pub struct Buffer {
+    pub chars: [[Character; BUFFER_WIDTH]; BUFFER_HEIGHT], //prealloc..
+}

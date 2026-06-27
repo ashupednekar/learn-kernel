@@ -15,8 +15,4 @@ panic = "abort"
 panic = "abort"
 
 [dependencies]
-anyhow = "1.0.102"
 bootloader = "0.9" # latest includs core by default... 
-config = "0.15.24"
-lazy_static = "1.5.0"
-serde = { version = "1.0.228", features = ["derive"] }
